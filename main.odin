@@ -53,35 +53,35 @@ Button_Result :: enum {
 }
 
 Status_Tag :: struct {
-	label: string,
+	label:  string,
 	active: bool,
 }
 
 Poison_Def :: struct {
-	dps: f32,
+	dps:      f32,
 	duration: f32,
 }
 
 Trap_Def :: struct {
-	life: f32,
-	radius: f32,
-	wall_damage: f32,
-	wall_knock: f32,
+	life:             f32,
+	radius:           f32,
+	wall_damage:      f32,
+	wall_knock:       f32,
 	projectile_speed: f32,
 }
 
 Beam_Def :: struct {
-	range: f32,
+	range:    f32,
 	base_dps: f32,
-	growth: f32,
+	growth:   f32,
 }
 
 Web_Def :: struct {
 	projectile_speed: f32,
-	radius: f32,
-	trap_radius: f32,
-	life: f32,
-	poison: Poison_Def,
+	radius:           f32,
+	trap_radius:      f32,
+	life:             f32,
+	poison:           Poison_Def,
 }
 
 Infect_Def :: struct {
@@ -89,119 +89,119 @@ Infect_Def :: struct {
 }
 
 Helpers_Def :: struct {
-	count: int,
-	hp: f32,
+	count:    int,
+	hp:       f32,
 	cooldown: f32,
 }
 
 Fighter_Def :: struct {
-	name: string,
-	color: rl.Color,
-	hp: f32,
-	radius: f32,
-	speed: f32,
-	mass: f32,
-	damage: f32,
-	cooldown: f32,
-	range: f32,
-	knockback: f32,
-	ai_spider: bool,
-	ai_zoner: bool,
-	has_trap: bool,
-	trap: Trap_Def,
-	has_poison: bool,
-	poison: Poison_Def,
-	has_beam: bool,
-	beam: Beam_Def,
-	has_web: bool,
-	web: Web_Def,
-	revive: bool,
-	has_infect: bool,
-	infect: Infect_Def,
+	name:        string,
+	color:       rl.Color,
+	hp:          f32,
+	radius:      f32,
+	speed:       f32,
+	mass:        f32,
+	damage:      f32,
+	cooldown:    f32,
+	range:       f32,
+	knockback:   f32,
+	ai_spider:   bool,
+	ai_zoner:    bool,
+	has_trap:    bool,
+	trap:        Trap_Def,
+	has_poison:  bool,
+	poison:      Poison_Def,
+	has_beam:    bool,
+	beam:        Beam_Def,
+	has_web:     bool,
+	web:         Web_Def,
+	revive:      bool,
+	has_infect:  bool,
+	infect:      Infect_Def,
 	has_helpers: bool,
-	helpers: Helpers_Def,
+	helpers:     Helpers_Def,
 }
 
 Unit :: struct {
-	uid: int,
-	kind: Fighter_Kind,
-	name: string,
-	team: int,
-	x: f32,
-	y: f32,
-	vx: f32,
-	vy: f32,
-	r: f32,
-	color: rl.Color,
-	hp: f32,
-	max_hp: f32,
-	speed: f32,
-	mass: f32,
-	damage: f32,
-	cooldown: f32,
-	range: f32,
-	knockback: f32,
-	def: ^Fighter_Def,
-	dead: bool,
-	revived: bool,
-	owner_uid: int,
-	is_helper: bool,
-	attack_timer: f32,
-	stun: f32,
-	burn: f32,
-	burn_dps: f32,
-	poison: f32,
-	poison_dps: f32,
-	infected_by: int,
-	beam_target_uid: int,
-	beam_time: f32,
-	helper_cooldown: f32,
-	last_webbed_enemy_uid: int,
+	uid:                     int,
+	kind:                    Fighter_Kind,
+	name:                    string,
+	team:                    int,
+	x:                       f32,
+	y:                       f32,
+	vx:                      f32,
+	vy:                      f32,
+	r:                       f32,
+	color:                   rl.Color,
+	hp:                      f32,
+	max_hp:                  f32,
+	speed:                   f32,
+	mass:                    f32,
+	damage:                  f32,
+	cooldown:                f32,
+	range:                   f32,
+	knockback:               f32,
+	def:                     ^Fighter_Def,
+	dead:                    bool,
+	revived:                 bool,
+	owner_uid:               int,
+	is_helper:               bool,
+	attack_timer:            f32,
+	stun:                    f32,
+	burn:                    f32,
+	burn_dps:                f32,
+	poison:                  f32,
+	poison_dps:              f32,
+	infected_by:             int,
+	beam_target_uid:         int,
+	beam_time:               f32,
+	helper_cooldown:         f32,
+	last_webbed_enemy_uid:   int,
 	last_webbed_enemy_timer: f32,
 	helper_contact_cooldown: f32,
-	webbed_by: int,
-	webbed_time: f32,
-	web_anchor_x: f32,
-	web_anchor_y: f32,
+	webbed_by:               int,
+	webbed_time:             f32,
+	web_anchor_x:            f32,
+	web_anchor_y:            f32,
 }
 
 Projectile :: struct {
-	kind: Projectile_Kind,
+	kind:      Projectile_Kind,
 	owner_uid: int,
-	team: int,
-	x: f32,
-	y: f32,
-	vx: f32,
-	vy: f32,
-	r: f32,
-	life: f32,
-	color: rl.Color,
+	team:      int,
+	x:         f32,
+	y:         f32,
+	vx:        f32,
+	vy:        f32,
+	r:         f32,
+	life:      f32,
+	color:     rl.Color,
 }
 
 Trap :: struct {
-	kind: Trap_Kind,
-	owner_uid: int,
-	team: int,
-	x: f32,
-	y: f32,
-	r: f32,
-	life: f32,
-	max_life: f32,
+	kind:        Trap_Kind,
+	owner_uid:   int,
+	team:        int,
+	x:           f32,
+	y:           f32,
+	r:           f32,
+	life:        f32,
+	max_life:    f32,
 	wall_damage: f32,
-	wall_knock: f32,
+	wall_knock:  f32,
 }
 
 Effect :: struct {
-	kind: Effect_Kind,
-	x: f32,
-	y: f32,
-	nx: f32,
-	ny: f32,
-	r: f32,
-	max_r: f32,
-	life: f32,
-	max_life: f32,
-	color: rl.Color,
+	kind:       Effect_Kind,
+	x:          f32,
+	y:          f32,
+	nx:         f32,
+	ny:         f32,
+	r:          f32,
+	max_r:      f32,
+	life:       f32,
+	max_life:   f32,
+	color:      rl.Color,
 	text_value: f32,
 }
 
@@ -210,26 +210,26 @@ UI_State :: struct {
 }
 
 Game_State :: struct {
-	units: [MAX_UNITS]Unit,
-	unit_count: int,
-	projectiles: [MAX_PROJECTILES]Projectile,
+	units:            [MAX_UNITS]Unit,
+	unit_count:       int,
+	projectiles:      [MAX_PROJECTILES]Projectile,
 	projectile_count: int,
-	traps: [MAX_TRAPS]Trap,
-	trap_count: int,
-	effects: [MAX_EFFECTS]Effect,
-	effect_count: int,
-	winner_team: int,
-	started: bool,
-	bounce: f32,
-	gravity: f32,
-	sim_speed: f32,
-	fighter_a: Fighter_Kind,
-	fighter_b: Fighter_Kind,
-	ui: UI_State,
-	next_uid: int,
+	traps:            [MAX_TRAPS]Trap,
+	trap_count:       int,
+	effects:          [MAX_EFFECTS]Effect,
+	effect_count:     int,
+	winner_team:      int,
+	started:          bool,
+	bounce:           f32,
+	gravity:          f32,
+	sim_speed:        f32,
+	fighter_a:        Fighter_Kind,
+	fighter_b:        Fighter_Kind,
+	ui:               UI_State,
+	next_uid:         int,
 }
 
-fighter_defs := [?]Fighter_Def{
+fighter_defs := [?]Fighter_Def {
 	{
 		name = "Basic Sword",
 		color = rl.Color{0x60, 0xa5, 0xfa, 0xff},
@@ -255,7 +255,13 @@ fighter_defs := [?]Fighter_Def{
 		knockback = 80,
 		ai_zoner = true,
 		has_trap = true,
-		trap = {life = 3.2, radius = 72, wall_damage = 8, wall_knock = 280, projectile_speed = 360},
+		trap = {
+			life = 3.2,
+			radius = 72,
+			wall_damage = 8,
+			wall_knock = 280,
+			projectile_speed = 360,
+		},
 	},
 	{
 		name = "Toxic Blade",
@@ -299,7 +305,13 @@ fighter_defs := [?]Fighter_Def{
 		knockback = 90,
 		ai_spider = true,
 		has_web = true,
-		web = {projectile_speed = 380, radius = 11, trap_radius = 30, life = 4.0, poison = {dps = 4.5, duration = 4.5}},
+		web = {
+			projectile_speed = 380,
+			radius = 11,
+			trap_radius = 30,
+			life = 4.0,
+			poison = {dps = 4.5, duration = 4.5},
+		},
 	},
 	{
 		name = "Zombie",
@@ -338,9 +350,9 @@ main :: proc() {
 	defer rl.CloseWindow()
 	rl.SetTargetFPS(60)
 
-	state := Game_State{
-		bounce = 0.92,
-		gravity = 0,
+	state := Game_State {
+		bounce    = 0.92,
+		gravity   = 0,
 		sim_speed = 1,
 		fighter_a = .Sword,
 		fighter_b = .Trapper,
@@ -379,11 +391,37 @@ reset_match :: proc(state: ^Game_State) {
 	state.started = false
 	state.next_uid = 1
 
-	spawn_fighter(state, state.fighter_a, 1, arena_left() + 180, arena_top() + ARENA_H * 0.5, 1, false, 0)
-	spawn_fighter(state, state.fighter_b, 2, arena_right() - 180, arena_top() + ARENA_H * 0.5, -1, false, 0)
+	spawn_fighter(
+		state,
+		state.fighter_a,
+		1,
+		arena_left() + 180,
+		arena_top() + ARENA_H * 0.5,
+		1,
+		false,
+		0,
+	)
+	spawn_fighter(
+		state,
+		state.fighter_b,
+		2,
+		arena_right() - 180,
+		arena_top() + ARENA_H * 0.5,
+		-1,
+		false,
+		0,
+	)
 }
 
-spawn_fighter :: proc(state: ^Game_State, kind: Fighter_Kind, team: int, x, y: f32, facing: f32, is_helper: bool, owner_uid: int) -> ^Unit {
+spawn_fighter :: proc(
+	state: ^Game_State,
+	kind: Fighter_Kind,
+	team: int,
+	x, y: f32,
+	facing: f32,
+	is_helper: bool,
+	owner_uid: int,
+) -> ^Unit {
 	if state.unit_count >= MAX_UNITS {
 		return nil
 	}
@@ -391,28 +429,28 @@ spawn_fighter :: proc(state: ^Game_State, kind: Fighter_Kind, team: int, x, y: f
 	unit := &state.units[state.unit_count]
 	state.unit_count += 1
 
-	unit^ = Unit{
-		uid = state.next_uid,
-		kind = kind,
-		name = def.name,
-		team = team,
-		x = x,
-		y = y,
-		vx = facing * 90,
-		vy = rand_range(-40, 40),
-		r = def.radius,
-		color = def.color,
-		hp = def.hp,
-		max_hp = def.hp,
-		speed = def.speed,
-		mass = def.mass,
-		damage = def.damage,
-		cooldown = def.cooldown,
-		range = def.range,
-		knockback = def.knockback,
-		def = def,
-		owner_uid = owner_uid,
-		is_helper = is_helper,
+	unit^ = Unit {
+		uid          = state.next_uid,
+		kind         = kind,
+		name         = def.name,
+		team         = team,
+		x            = x,
+		y            = y,
+		vx           = facing * 90,
+		vy           = rand_range(-40, 40),
+		r            = def.radius,
+		color        = def.color,
+		hp           = def.hp,
+		max_hp       = def.hp,
+		speed        = def.speed,
+		mass         = def.mass,
+		damage       = def.damage,
+		cooldown     = def.cooldown,
+		range        = def.range,
+		knockback    = def.knockback,
+		def          = def,
+		owner_uid    = owner_uid,
+		is_helper    = is_helper,
 		attack_timer = rand_range(0, 0.2),
 	}
 
@@ -602,34 +640,40 @@ update_statuses :: proc(state: ^Game_State, unit: ^Unit, dt: f32) {
 
 attack :: proc(state: ^Game_State, attacker, target: ^Unit, nx, ny: f32) {
 	if attacker.def.has_trap {
-		push_projectile(state, Projectile{
-			kind = .Trap_Shot,
-			owner_uid = attacker.uid,
-			team = attacker.team,
-			x = attacker.x + nx * (attacker.r + 6),
-			y = attacker.y + ny * (attacker.r + 6),
-			vx = nx * attacker.def.trap.projectile_speed,
-			vy = ny * attacker.def.trap.projectile_speed,
-			r = 10,
-			life = 1.5,
-			color = color_hex(0xc4b5fdff),
-		})
+		push_projectile(
+			state,
+			Projectile {
+				kind = .Trap_Shot,
+				owner_uid = attacker.uid,
+				team = attacker.team,
+				x = attacker.x + nx * (attacker.r + 6),
+				y = attacker.y + ny * (attacker.r + 6),
+				vx = nx * attacker.def.trap.projectile_speed,
+				vy = ny * attacker.def.trap.projectile_speed,
+				r = 10,
+				life = 1.5,
+				color = color_hex(0xc4b5fdff),
+			},
+		)
 		return
 	}
 
 	if attacker.def.has_web {
-		push_projectile(state, Projectile{
-			kind = .Web_Shot,
-			owner_uid = attacker.uid,
-			team = attacker.team,
-			x = attacker.x + nx * (attacker.r + 4),
-			y = attacker.y + ny * (attacker.r + 4),
-			vx = nx * attacker.def.web.projectile_speed,
-			vy = ny * attacker.def.web.projectile_speed,
-			r = attacker.def.web.radius,
-			life = 1.7,
-			color = attacker.color,
-		})
+		push_projectile(
+			state,
+			Projectile {
+				kind = .Web_Shot,
+				owner_uid = attacker.uid,
+				team = attacker.team,
+				x = attacker.x + nx * (attacker.r + 4),
+				y = attacker.y + ny * (attacker.r + 4),
+				vx = nx * attacker.def.web.projectile_speed,
+				vy = ny * attacker.def.web.projectile_speed,
+				r = attacker.def.web.radius,
+				life = 1.7,
+				color = attacker.color,
+			},
+		)
 		return
 	}
 
@@ -640,16 +684,19 @@ inflict_hit :: proc(state: ^Game_State, attacker, target: ^Unit, nx, ny: f32) {
 	apply_damage(state, target, attacker.damage, attacker)
 	target.vx += (nx * attacker.knockback) / target.mass
 	target.vy += (ny * attacker.knockback) / target.mass
-	push_effect(state, Effect{
-		kind = .Slash,
-		x = (attacker.x + target.x) * 0.5,
-		y = (attacker.y + target.y) * 0.5,
-		nx = nx,
-		ny = ny,
-		life = 0.18,
-		max_life = 0.18,
-		color = attacker.color,
-	})
+	push_effect(
+		state,
+		Effect {
+			kind = .Slash,
+			x = (attacker.x + target.x) * 0.5,
+			y = (attacker.y + target.y) * 0.5,
+			nx = nx,
+			ny = ny,
+			life = 0.18,
+			max_life = 0.18,
+			color = attacker.color,
+		},
+	)
 
 	if attacker.def.has_poison {
 		target.poison = attacker.def.poison.duration
@@ -672,15 +719,18 @@ apply_damage :: proc(state: ^Game_State, target: ^Unit, amount: f32, source: ^Un
 	on_unit_hit(state, target, source, amount)
 	target.hp -= amount
 
-	push_effect(state, Effect{
-		kind = .Text,
-		x = target.x,
-		y = target.y - 24,
-		life = 0.45,
-		max_life = 0.45,
-		color = rl.WHITE,
-		text_value = amount,
-	})
+	push_effect(
+		state,
+		Effect {
+			kind = .Text,
+			x = target.x,
+			y = target.y - 24,
+			life = 0.45,
+			max_life = 0.45,
+			color = rl.WHITE,
+			text_value = amount,
+		},
+	)
 
 	if target.hp > 0 {
 		return
@@ -689,16 +739,19 @@ apply_damage :: proc(state: ^Game_State, target: ^Unit, amount: f32, source: ^Un
 	if target.def.revive && !target.revived {
 		target.revived = true
 		target.hp = target.max_hp * 0.45
-		push_effect(state, Effect{
-			kind = .Ring,
-			x = target.x,
-			y = target.y,
-			r = 10,
-			max_r = 48,
-			life = 0.6,
-			max_life = 0.6,
-			color = color_hex(0x84cc16ff),
-		})
+		push_effect(
+			state,
+			Effect {
+				kind = .Ring,
+				x = target.x,
+				y = target.y,
+				r = 10,
+				max_r = 48,
+				life = 0.6,
+				max_life = 0.6,
+				color = color_hex(0x84cc16ff),
+			},
+		)
 		return
 	}
 
@@ -707,16 +760,19 @@ apply_damage :: proc(state: ^Game_State, target: ^Unit, amount: f32, source: ^Un
 	target.dead = true
 	target.hp = 0
 
-	push_effect(state, Effect{
-		kind = .Ring,
-		x = death_x,
-		y = death_y,
-		r = 10,
-		max_r = 54,
-		life = 0.6,
-		max_life = 0.6,
-		color = target.color,
-	})
+	push_effect(
+		state,
+		Effect {
+			kind = .Ring,
+			x = death_x,
+			y = death_y,
+			r = 10,
+			max_r = 54,
+			life = 0.6,
+			max_life = 0.6,
+			color = target.color,
+		},
+	)
 
 	if target.infected_by != 0 && !target.is_helper {
 		team := source_team_from_infection(state, target.infected_by, source)
@@ -757,22 +813,34 @@ on_unit_hit :: proc(state: ^Game_State, target, source: ^Unit, amount: f32) {
 spawn_helper_pair :: proc(state: ^Game_State, larry: ^Unit) {
 	offsets := [2]f32{-18, 18}
 	for off in offsets {
-		helper := spawn_fighter(state, .Sword, larry.team, larry.x + off, larry.y + off * 0.6, select_dir(), true, larry.uid)
+		helper := spawn_fighter(
+			state,
+			.Sword,
+			larry.team,
+			larry.x + off,
+			larry.y + off * 0.6,
+			select_dir(),
+			true,
+			larry.uid,
+		)
 		if helper == nil {
 			continue
 		}
 		helper.vx += rand_range(-80, 80)
 		helper.vy += rand_range(-80, 80)
-		push_effect(state, Effect{
-			kind = .Ring,
-			x = helper.x,
-			y = helper.y,
-			r = 6,
-			max_r = 18,
-			life = 0.24,
-			max_life = 0.24,
-			color = helper.color,
-		})
+		push_effect(
+			state,
+			Effect {
+				kind = .Ring,
+				x = helper.x,
+				y = helper.y,
+				r = 6,
+				max_r = 18,
+				life = 0.24,
+				max_life = 0.24,
+				color = helper.color,
+			},
+		)
 	}
 }
 
@@ -842,34 +910,44 @@ update_projectiles :: proc(state: ^Game_State, dt: f32) {
 		p.x += p.vx * dt
 		p.y += p.vy * dt
 
-		hit_wall := p.x - p.r < arena_left() + WALL || p.x + p.r > arena_right() - WALL || p.y - p.r < arena_top() + WALL || p.y + p.r > arena_bottom() - WALL
+		hit_wall :=
+			p.x - p.r < arena_left() + WALL ||
+			p.x + p.r > arena_right() - WALL ||
+			p.y - p.r < arena_top() + WALL ||
+			p.y + p.r > arena_bottom() - WALL
 		if hit_wall {
 			owner := find_unit_by_uid(state, p.owner_uid)
 			if owner != nil {
 				if p.kind == .Trap_Shot {
-					push_trap(state, Trap{
-						kind = .Cage,
-						owner_uid = owner.uid,
-						team = owner.team,
-						x = clamp_f32(p.x, arena_left() + 80, arena_right() - 80),
-						y = clamp_f32(p.y, arena_top() + 80, arena_bottom() - 80),
-						r = owner.def.trap.radius,
-						life = owner.def.trap.life,
-						max_life = owner.def.trap.life,
-						wall_damage = owner.def.trap.wall_damage,
-						wall_knock = owner.def.trap.wall_knock,
-					})
+					push_trap(
+						state,
+						Trap {
+							kind = .Cage,
+							owner_uid = owner.uid,
+							team = owner.team,
+							x = clamp_f32(p.x, arena_left() + 80, arena_right() - 80),
+							y = clamp_f32(p.y, arena_top() + 80, arena_bottom() - 80),
+							r = owner.def.trap.radius,
+							life = owner.def.trap.life,
+							max_life = owner.def.trap.life,
+							wall_damage = owner.def.trap.wall_damage,
+							wall_knock = owner.def.trap.wall_knock,
+						},
+					)
 				} else {
-					push_trap(state, Trap{
-						kind = .Web,
-						owner_uid = owner.uid,
-						team = owner.team,
-						x = clamp_f32(p.x, arena_left() + 30, arena_right() - 30),
-						y = clamp_f32(p.y, arena_top() + 30, arena_bottom() - 30),
-						r = owner.def.web.trap_radius,
-						life = owner.def.web.life,
-						max_life = owner.def.web.life,
-					})
+					push_trap(
+						state,
+						Trap {
+							kind = .Web,
+							owner_uid = owner.uid,
+							team = owner.team,
+							x = clamp_f32(p.x, arena_left() + 30, arena_right() - 30),
+							y = clamp_f32(p.y, arena_top() + 30, arena_bottom() - 30),
+							r = owner.def.web.trap_radius,
+							life = owner.def.web.life,
+							max_life = owner.def.web.life,
+						},
+					)
 				}
 			}
 			p.life = 0
@@ -1046,9 +1124,39 @@ handle_ui :: proc(state: ^Game_State) {
 	slider_gravity := rect(24, 404, 284, 18)
 	slider_speed := rect(24, 474, 284, 18)
 
-	update_slider(state, 1, slider_bounce, 0.6, 1.05, &state.bounce, mouse, mouse_pressed, mouse_down)
-	update_slider(state, 2, slider_gravity, 0, 500, &state.gravity, mouse, mouse_pressed, mouse_down)
-	update_slider(state, 3, slider_speed, 0.5, 2.5, &state.sim_speed, mouse, mouse_pressed, mouse_down)
+	update_slider(
+		state,
+		1,
+		slider_bounce,
+		0.6,
+		1.05,
+		&state.bounce,
+		mouse,
+		mouse_pressed,
+		mouse_down,
+	)
+	update_slider(
+		state,
+		2,
+		slider_gravity,
+		0,
+		500,
+		&state.gravity,
+		mouse,
+		mouse_pressed,
+		mouse_down,
+	)
+	update_slider(
+		state,
+		3,
+		slider_speed,
+		0.5,
+		2.5,
+		&state.sim_speed,
+		mouse,
+		mouse_pressed,
+		mouse_down,
+	)
 
 	if button(mouse, mouse_pressed, rect(24, 540, 284, 42), "Start Fight") == .Pressed {
 		state.started = true
@@ -1062,7 +1170,7 @@ draw_ui :: proc(state: ^Game_State) {
 	draw_panel()
 
 	draw_text("Weapon Ball Fight", 24, 28, 28, rl.WHITE)
-	draw_text("Odin + raylib rewrite of the browser prototype.", 24, 62, 18, color_hex(0x9ca3afff))
+	draw_text("Gavin is a bitch", 24, 62, 18, color_hex(0x9ca3afff))
 
 	draw_section("Fighters", 24, 102)
 	draw_fighter_picker(24, 130, "Left fighter", fighter_defs[int(state.fighter_a)].name)
@@ -1073,8 +1181,18 @@ draw_ui :: proc(state: ^Game_State) {
 	draw_slider_block("Gravity", state.gravity, 24, 404, 0, 500, true)
 	draw_slider_block("Sim speed", state.sim_speed, 24, 474, 0.5, 2.5, false)
 
-	draw_button_visual(rect(24, 540, 284, 42), "Start Fight", color_hex(0x22c55eff), color_hex(0x08110cff))
-	draw_button_visual(rect(24, 592, 284, 42), "Restart Match", color_hex(0x60a5faff), color_hex(0x08111fff))
+	draw_button_visual(
+		rect(24, 540, 284, 42),
+		"Start Fight",
+		color_hex(0x22c55eff),
+		color_hex(0x08110cff),
+	)
+	draw_button_visual(
+		rect(24, 592, 284, 42),
+		"Restart Match",
+		color_hex(0x60a5faff),
+		color_hex(0x08111fff),
+	)
 
 	draw_text("Space / Enter starts the match.", 24, 650, 18, color_hex(0xd1d5dbff))
 	draw_text("Trapper fires cage shots.", 24, 682, 16, color_hex(0x9ca3afff))
@@ -1083,7 +1201,12 @@ draw_ui :: proc(state: ^Game_State) {
 }
 
 draw_arena :: proc(state: ^Game_State) {
-	rl.DrawRectangleRounded(rect(ARENA_X, ARENA_Y, ARENA_W, ARENA_H), 0.03, 12, color_hex(0x0b1220ff))
+	rl.DrawRectangleRounded(
+		rect(ARENA_X, ARENA_Y, ARENA_W, ARENA_H),
+		0.03,
+		12,
+		color_hex(0x0b1220ff),
+	)
 	rl.DrawRectangleLinesEx(rect(ARENA_X, ARENA_Y, ARENA_W, ARENA_H), 1, color_hex(0x374151ff))
 
 	for stripe := 0; stripe < 12; stripe += 1 {
@@ -1099,7 +1222,11 @@ draw_arena :: proc(state: ^Game_State) {
 		)
 	}
 
-	rl.DrawRectangleLinesEx(rect(arena_left() + WALL, arena_top() + WALL, ARENA_W - WALL * 2, ARENA_H - WALL * 2), 3, color_hex(0x334155ff))
+	rl.DrawRectangleLinesEx(
+		rect(arena_left() + WALL, arena_top() + WALL, ARENA_W - WALL * 2, ARENA_H - WALL * 2),
+		3,
+		color_hex(0x334155ff),
+	)
 
 	for i := 0; i < state.trap_count; i += 1 {
 		draw_trap(&state.traps[i])
@@ -1158,7 +1285,12 @@ draw_hud_card :: proc(bounds: rl.Rectangle, unit: ^Unit, align_right: bool) {
 	draw_text(name, text_x, i32(bounds.y + 12), 20, rl.WHITE)
 	bar_rect := rect(bounds.x + 14, bounds.y + 38, bounds.width - 28, 12)
 	rl.DrawRectangleRounded(bar_rect, 1, 8, color_hex(0x374151ff))
-	rl.DrawRectangleRounded(rect(bar_rect.x, bar_rect.y, bar_rect.width * hp_pct, bar_rect.height), 1, 8, fill)
+	rl.DrawRectangleRounded(
+		rect(bar_rect.x, bar_rect.y, bar_rect.width * hp_pct, bar_rect.height),
+		1,
+		8,
+		fill,
+	)
 	draw_text(status, i32(bounds.x + 14), i32(bounds.y + 54), 16, color_hex(0xd1d5dbff))
 }
 
@@ -1167,7 +1299,13 @@ draw_ready_box :: proc() {
 	rl.DrawRectangleRounded(box, 0.14, 10, rgba(17, 24, 39, 238))
 	rl.DrawRectangleLinesEx(box, 1, color_hex(0x4b5563ff))
 	draw_text("Ready to fight", i32(box.x + 84), i32(box.y + 24), 28, rl.WHITE)
-	draw_text("Press Start Fight or hit Space.", i32(box.x + 52), i32(box.y + 60), 18, color_hex(0xd1d5dbff))
+	draw_text(
+		"Press Start Fight or hit Space.",
+		i32(box.x + 52),
+		i32(box.y + 60),
+		18,
+		color_hex(0xd1d5dbff),
+	)
 }
 
 draw_winner_box :: proc(state: ^Game_State) {
@@ -1184,13 +1322,26 @@ draw_unit :: proc(state: ^Game_State, unit: ^Unit) {
 		return
 	}
 	rl.DrawCircleV(vec2(unit.x, unit.y), unit.r, unit.color)
-	rl.DrawCircleV(vec2(unit.x - unit.r * 0.25, unit.y - unit.r * 0.25), unit.r * 0.35, rgba(255, 255, 255, 60))
+	rl.DrawCircleV(
+		vec2(unit.x - unit.r * 0.25, unit.y - unit.r * 0.25),
+		unit.r * 0.35,
+		rgba(255, 255, 255, 60),
+	)
 
 	if unit.webbed_time > 0 {
-		rl.DrawLineEx(vec2(unit.x, unit.y), vec2(unit.web_anchor_x, unit.web_anchor_y), 2, color_hex(0xf472b6ff))
+		rl.DrawLineEx(
+			vec2(unit.x, unit.y),
+			vec2(unit.web_anchor_x, unit.web_anchor_y),
+			2,
+			color_hex(0xf472b6ff),
+		)
 	}
 
-	if unit.kind == .Sword || unit.kind == .Toxic || unit.kind == .Zombie || unit.kind == .Larry || unit.is_helper {
+	if unit.kind == .Sword ||
+	   unit.kind == .Toxic ||
+	   unit.kind == .Zombie ||
+	   unit.kind == .Larry ||
+	   unit.is_helper {
 		target, _ := nearest_enemy(state, unit^)
 		if target != nil {
 			dx := target.x - unit.x
@@ -1229,7 +1380,12 @@ draw_beam :: proc(state: ^Game_State, unit: ^Unit) {
 	}
 	alpha := clamp_f32(0.25 + unit.beam_time * 0.3, 0.25, 0.95)
 	width := clamp_f32(3 + unit.beam_time * 2.2, 3, 12)
-	rl.DrawLineEx(vec2(unit.x, unit.y), vec2(target.x, target.y), width, color_alpha(color_hex(0xfb923cff), alpha))
+	rl.DrawLineEx(
+		vec2(unit.x, unit.y),
+		vec2(target.x, target.y),
+		width,
+		color_alpha(color_hex(0xfb923cff), alpha),
+	)
 }
 
 draw_projectile :: proc(p: ^Projectile) {
@@ -1239,7 +1395,15 @@ draw_projectile :: proc(p: ^Projectile) {
 draw_trap :: proc(t: ^Trap) {
 	alpha := 0.35 + 0.45 * (t.life / max_f32(t.max_life, 0.001))
 	if t.kind == .Cage {
-		rl.DrawRing(vec2(t.x, t.y), t.r - 3, t.r + 3, 0, 360, 64, color_alpha(color_hex(0xc4b5fdff), alpha))
+		rl.DrawRing(
+			vec2(t.x, t.y),
+			t.r - 3,
+			t.r + 3,
+			0,
+			360,
+			64,
+			color_alpha(color_hex(0xc4b5fdff), alpha),
+		)
 		return
 	}
 
@@ -1260,14 +1424,34 @@ draw_effect :: proc(effect: ^Effect) {
 	case .Ring:
 		p := 1 - effect.life / max_f32(effect.max_life, 0.001)
 		rr := effect.r + (effect.max_r - effect.r) * clamp_f32(p, 0, 1)
-		rl.DrawRing(vec2(effect.x, effect.y), rr - 1.5, rr + 1.5, 0, 360, 64, color_alpha(effect.color, alpha))
+		rl.DrawRing(
+			vec2(effect.x, effect.y),
+			rr - 1.5,
+			rr + 1.5,
+			0,
+			360,
+			64,
+			color_alpha(effect.color, alpha),
+		)
 	case .Slash:
-		start := vec2(effect.x - effect.nx * 10 - effect.ny * 8, effect.y - effect.ny * 10 + effect.nx * 8)
-		finish := vec2(effect.x + effect.nx * 10 + effect.ny * 8, effect.y + effect.ny * 10 - effect.nx * 8)
+		start := vec2(
+			effect.x - effect.nx * 10 - effect.ny * 8,
+			effect.y - effect.ny * 10 + effect.nx * 8,
+		)
+		finish := vec2(
+			effect.x + effect.nx * 10 + effect.ny * 8,
+			effect.y + effect.ny * 10 - effect.nx * 8,
+		)
 		rl.DrawLineEx(start, finish, 4, color_alpha(effect.color, alpha))
 	case .Text:
 		label := fmt.tprintf("%.1f", effect.text_value)
-		draw_text(label, i32(effect.x), i32(effect.y - (1 - alpha) * 18), 18, color_alpha(effect.color, alpha))
+		draw_text(
+			label,
+			i32(effect.x),
+			i32(effect.y - (1 - alpha) * 18),
+			18,
+			color_alpha(effect.color, alpha),
+		)
 	}
 }
 
@@ -1283,15 +1467,32 @@ draw_section :: proc(label: string, x, y: i32) {
 draw_fighter_picker :: proc(x, y: i32, label, value: string) {
 	draw_text(label, x, y, 16, color_hex(0xd1d5dbff))
 	draw_button_visual(rect(f32(x), f32(y + 28), 36, 36), "<", color_hex(0x111827ff), rl.WHITE)
-	draw_button_visual(rect(f32(x + 248), f32(y + 28), 36, 36), ">", color_hex(0x111827ff), rl.WHITE)
+	draw_button_visual(
+		rect(f32(x + 248), f32(y + 28), 36, 36),
+		">",
+		color_hex(0x111827ff),
+		rl.WHITE,
+	)
 	box := rect(f32(x + 44), f32(y + 28), 196, 36)
 	rl.DrawRectangleRounded(box, 0.2, 8, color_hex(0x111827ff))
 	rl.DrawRectangleLinesEx(box, 1, color_hex(0x4b5563ff))
 	text_w := text_width(value, 18)
-	draw_text(value, i32(box.x + box.width * 0.5 - f32(text_w) * 0.5), i32(box.y + 9), 18, rl.WHITE)
+	draw_text(
+		value,
+		i32(box.x + box.width * 0.5 - f32(text_w) * 0.5),
+		i32(box.y + 9),
+		18,
+		rl.WHITE,
+	)
 }
 
-draw_slider_block :: proc(label: string, value: f32, x, y: i32, min_value, max_value: f32, whole_number: bool) {
+draw_slider_block :: proc(
+	label: string,
+	value: f32,
+	x, y: i32,
+	min_value, max_value: f32,
+	whole_number: bool,
+) {
 	draw_text(label, x, y - 26, 16, color_hex(0xd1d5dbff))
 	bar := rect(f32(x), f32(y), 284, 18)
 	rl.DrawRectangleRounded(bar, 1, 8, color_hex(0x374151ff))
@@ -1315,10 +1516,21 @@ draw_button_visual :: proc(bounds: rl.Rectangle, label: string, bg, fg: rl.Color
 	rl.DrawRectangleRounded(bounds, 0.22, 8, bg)
 	rl.DrawRectangleLinesEx(bounds, 1, color_hex(0x4b5563ff))
 	text_w := text_width(label, 18)
-	draw_text(label, i32(bounds.x + bounds.width * 0.5 - f32(text_w) * 0.5), i32(bounds.y + 9), 18, fg)
+	draw_text(
+		label,
+		i32(bounds.x + bounds.width * 0.5 - f32(text_w) * 0.5),
+		i32(bounds.y + 9),
+		18,
+		fg,
+	)
 }
 
-button :: proc(mouse: rl.Vector2, mouse_pressed: bool, bounds: rl.Rectangle, label: string) -> Button_Result {
+button :: proc(
+	mouse: rl.Vector2,
+	mouse_pressed: bool,
+	bounds: rl.Rectangle,
+	label: string,
+) -> Button_Result {
 	_ = label
 	if rl.CheckCollisionPointRec(mouse, bounds) {
 		if mouse_pressed {
@@ -1329,8 +1541,19 @@ button :: proc(mouse: rl.Vector2, mouse_pressed: bool, bounds: rl.Rectangle, lab
 	return .None
 }
 
-update_slider :: proc(state: ^Game_State, slider_id: int, bounds: rl.Rectangle, min_value, max_value: f32, value: ^f32, mouse: rl.Vector2, mouse_pressed, mouse_down: bool) {
-	hovered := rl.CheckCollisionPointRec(mouse, rect(bounds.x - 4, bounds.y - 10, bounds.width + 8, bounds.height + 20))
+update_slider :: proc(
+	state: ^Game_State,
+	slider_id: int,
+	bounds: rl.Rectangle,
+	min_value, max_value: f32,
+	value: ^f32,
+	mouse: rl.Vector2,
+	mouse_pressed, mouse_down: bool,
+) {
+	hovered := rl.CheckCollisionPointRec(
+		mouse,
+		rect(bounds.x - 4, bounds.y - 10, bounds.width + 8, bounds.height + 20),
+	)
 	if hovered && mouse_pressed {
 		state.ui.active_slider = slider_id
 	}
@@ -1367,7 +1590,7 @@ primary_unit :: proc(state: ^Game_State, team: int) -> ^Unit {
 }
 
 status_text :: proc(unit: Unit) -> string {
-	tags := [4]Status_Tag{
+	tags := [4]Status_Tag {
 		{"Burn", unit.burn > 0},
 		{"Poison", unit.poison > 0},
 		{"Revived", unit.revived},
@@ -1446,10 +1669,10 @@ cycle_kind :: proc(kind: Fighter_Kind, delta: int) -> Fighter_Kind {
 	return Fighter_Kind(next)
 }
 
-arena_left :: proc() -> f32 { return ARENA_X }
-arena_right :: proc() -> f32 { return ARENA_X + ARENA_W }
-arena_top :: proc() -> f32 { return ARENA_Y }
-arena_bottom :: proc() -> f32 { return ARENA_Y + ARENA_H }
+arena_left :: proc() -> f32 {return ARENA_X}
+arena_right :: proc() -> f32 {return ARENA_X + ARENA_W}
+arena_top :: proc() -> f32 {return ARENA_Y}
+arena_bottom :: proc() -> f32 {return ARENA_Y + ARENA_H}
 
 distance :: proc(ax, ay, bx, by: f32) -> f32 {
 	return vector_len(ax - bx, ay - by)
@@ -1495,12 +1718,7 @@ text_width :: proc(text: string, size: i32) -> i32 {
 }
 
 color_hex :: proc(v: u32) -> rl.Color {
-	return rl.Color{
-		u8((v >> 24) & 0xff),
-		u8((v >> 16) & 0xff),
-		u8((v >> 8) & 0xff),
-		u8(v & 0xff),
-	}
+	return rl.Color{u8((v >> 24) & 0xff), u8((v >> 16) & 0xff), u8((v >> 8) & 0xff), u8(v & 0xff)}
 }
 
 rgba :: proc(r, g, b, a: u8) -> rl.Color {
@@ -1508,12 +1726,7 @@ rgba :: proc(r, g, b, a: u8) -> rl.Color {
 }
 
 color_alpha :: proc(color: rl.Color, alpha: f32) -> rl.Color {
-	return rl.Color{
-		color.r,
-		color.g,
-		color.b,
-		u8(clamp_f32(alpha, 0, 1) * 255),
-	}
+	return rl.Color{color.r, color.g, color.b, u8(clamp_f32(alpha, 0, 1) * 255)}
 }
 
 clamp_f32 :: proc(v, min_value, max_value: f32) -> f32 {
@@ -1546,3 +1759,4 @@ abs_f32 :: proc(v: f32) -> f32 {
 	}
 	return v
 }
+
